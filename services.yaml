@@ -1,0 +1,9 @@
+add_timestamp_to_image:
+  description: Add a timestamp to an image
+  fields:
+    input_image_path:
+      description: The path to the input image file
+      example: "/tmp/snapshot.jpeg"
+    output_image_path:
+      description: The path to save the output image file with timestamp
+      example: "/tmp/snapshot_with_timestamp.jpeg"

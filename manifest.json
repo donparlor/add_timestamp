@@ -1,0 +1,8 @@
+{
+  "domain": "add_timestamp",
+  "name": "Add Timestamp to Image",
+  "documentation": "",
+  "dependencies": [],
+  "codeowners": [],
+  "requirements": ["Pillow==9.4.0"]
+}
