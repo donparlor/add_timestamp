@@ -1,0 +1,22 @@
+alias: Capture Image with Timestamp and Send Email
+trigger:
+  # Choose your trigger
+action:
+  - service: camera.snapshot
+    target:
+      entity_id: camera.esp32_cam_f_my_esp32_cam\ #choose your camera
+    data:
+      filename: "/tmp/snapshot.jpeg"
+  - service: add_timestamp.add_timestamp_to_image
+    data:
+      input_image_path: "/tmp/snapshot.jpeg"
+      output_image_path: "/tmp/snapshot_with_timestamp.jpeg"
+  - service: notify.gmail
+    data:
+      title: Prise de donnees - Cosmo Lyo
+      message: Voici une photo du compteur electrique du local 2012
+      data:
+        images:
+          - "/tmp/snapshot_with_timestamp.jpeg"
+mode: single
+}
